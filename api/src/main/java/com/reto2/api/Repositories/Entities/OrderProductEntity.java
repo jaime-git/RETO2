@@ -1,36 +1,40 @@
 package com.reto2.api.Repositories.Entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Table(name = "OrderProducts")
+@Entity(name = "OrderProducts")
 public class OrderProductEntity {
-    public OrderEntity order;
-    public ProductEntity product;
-    private static int counterOP = 0;
+
+    private @Id @GeneratedValue(strategy= GenerationType.IDENTITY) Long id;
+    private int cuantity;
+
+    public OrderEntity orderId;
+    public ProductEntity productId;
 
     public OrderProductEntity(){
-        setIdOP(counterOP++);
     }
 
-    public OrderProductEntity(ProductEntity _product, OrderEntity _order, int _cuantity){
-        this.idOP = counterOP++;
-        this.order = _order;
-        this.product = _product;
+    public OrderProductEntity(ProductEntity _productId, OrderEntity _orderId, int _cuantity){
+        this.orderId = _orderId;
+        this.productId = _productId;
         this.cuantity = _cuantity;
     }
 
-    private int idOP;
-    public int getIdOP() { return idOP; }
-    public void setIdOP(int idOP) { this.idOP = idOP; }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    private int cuantity;
     public int getCuantity() { return cuantity; }
     public void setCuantity(int cuantity) { this.cuantity = cuantity; }
 
-    public OrderEntity getOrder() { return order; }
+    public OrderEntity getOrderId() { return orderId; }
+    public void setOrderId(OrderEntity orderId) { this.orderId = orderId; }
 
-    public void setOrder(OrderEntity order) { this.order = order; }
-
-    public ProductEntity getProduct() { return product; }
-
-    public void setProduct(ProductEntity product) { this.product = product; }
+    public ProductEntity getProductId() { return productId; }
+    public void setProductId(ProductEntity productId) { this.productId = productId; }
  
-    
 }

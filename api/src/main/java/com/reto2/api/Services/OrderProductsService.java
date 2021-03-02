@@ -1,13 +1,13 @@
 package com.reto2.api.Services;
 
-import com.reto2.api.Repositories.Interfaces.ProductsRepository;
+import com.reto2.api.Repositories.Interfaces.OrderProductsRepository;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class ProductsService {
+public class OrderProductsService {
     @Autowired
-    private ProductsRepository productsRepository;
+    private OrderProductsRepository orderProductsRepository;
     @Autowired
     private ModelMapper modelMapper;
 }
