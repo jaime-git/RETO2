@@ -1,0 +1,85 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>LISTA PRODUCTOS</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+</head>
+<body style="background-color: rgb(243, 243, 243);">
+    <header style="background-color: black;">
+        <h1 style="color: white; text-align: center; padding: 2%;" th:text="#{Lang.title}"></h1>
+        <div class="form-floating">
+            <select class="form-select" id="languages" onchange="reload();" aria-label="Floating label select example">
+              <option selected th:text="#{Button.language}"></option>
+              <option value="en" th:text="#{Lang.en}"></option>
+              <option value="es" th:text="#{Lang.es}"></option>
+            </select>
+        </div>
+    </header>
+    <div class="row">
+        <div class="col-7" style="justify-content: space-between;">
+            <div style="margin-left: 3%; padding: 2%; font-style: italic; text-decoration: underline;" >
+                <h3 th:text="#{Lang.plist}"></h3>
+            </div>
+            <div class="card" style="width: 20%; float: left; margin-right: 15%; margin-left: 5%;">
+                <img class="card-img-top" src="https://img01.ztat.net/article/spp-media-p1/74f692a8c7403fe5a847e239e5c2dedd/f44f7e4c50f9488ca32f0c3f3c29248c.jpg?imwidth=1800" alt="Card image cap" name="url_card">
+                <div class="card-body" style="align-self: center; text-align: center;" >
+                <h5 class="card-title" name="name_card" th:text="#{Lang.ptitle1}"></h5>
+                <p class="card-text" name="price_card">24.90</p>
+                <a class="btn btn-primary" onclick="javascript:addNewProduct(0)" th:text="#{Lang.addChart}"></a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 20%; ">
+                <img class="card-img-top" src="https://img01.ztat.net/article/spp-media-p1/5db8bb6f7d26357baa25b0f60bcec0d8/804d0c2024854d81bbf0f9040ab028c0.jpg?imwidth=1800&filter=packshot" alt="Card image cap" name="url_card">
+                <div class="card-body" style="align-self: center; text-align: center;">
+                <h5 class="card-title" name="name_card" th:text="#{Lang.ptitle2}"></h5>
+                <p class="card-text" name="price_card">49.95</p>
+                <a class="btn btn-primary" onclick="javascript:addNewProduct(1)" th:text="#{Lang.addChart}"></a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 20%; float: left; margin-right: 15%; margin-top: 4%; margin-left: 5%;">
+                <img class="card-img-top" src="https://img01.ztat.net/article/spp-media-p1/7d0a21c70a343986a8d2d739c00ff0ea/202d7fb502454282b5f24d5fa0940038.jpg?imwidth=1800" alt="Card image cap" name="url_card">
+                <div class="card-body" style="align-self: center; text-align: center;">
+                <h5 class="card-title" name="name_card" th:text="#{Lang.ptitle3}"></h5>
+                <p class="card-text" name="price_card">71.95</p>
+                <a class="btn btn-primary" onclick="javascript:addNewProduct(2)" th:text="#{Lang.addChart}"></a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 20%; margin-top: 4%;float: left;">
+                <img class="card-img-top" src="https://img01.ztat.net/article/spp-media-p1/38ba235846243fca8e274a448cdcf92d/261774c38a0a491989c3eb4c9fa130ce.jpg?imwidth=762&filter=packshot" alt="Card image cap" name="url_card">
+                <div class="card-body" style="align-self: center; text-align: center;">
+                <h5 class="card-title" name="name_card" th:text="#{Lang.ptitle4}"></h5>
+                <p class="card-text" name="price_card">43.95</p>
+                <a class="btn btn-primary" onclick="javascript:addNewProduct(3)" th:text="#{Lang.addChart}"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div style="margin-left: 8%; padding: 2%; font-style: italic; text-decoration: underline;" >
+                <h3 th:text="#{Lang.chart}"></h3>
+            </div>
+            <div class="container-fluid bg-white" style="width: 80%;">
+                <div class="h5 mt-2 mb-4 pt-3 wrapperTitleCart">
+                    <p class="myCart" th:text="#{Lang.mychart}"></p>
+                    <i class="deleteCart fa fa-trash" onclick="javascript:deleteCompleteOrder(3)"></i>
+                </div>
+                
+                <div class="h5 mt-2 mb-4 pt-3 wrapperTotalPrice">
+                    <p class="totalTitle">Total</p>
+                    <p class="totalPrice">0,00€</p>
+                    <button class="btn btn-success" disabled="disabled" th:text="#{Lang.pay}"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
