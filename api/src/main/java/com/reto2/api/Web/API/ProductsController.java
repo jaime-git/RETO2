@@ -1,7 +1,11 @@
 package com.reto2.api.Web.API;
 
-import com.reto2.api.Services.ProductsService;
+import java.util.List;
 
+import com.reto2.api.Services.ProductsService;
+import com.reto2.api.Services.Models.ProductDTO;
+
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,5 +17,11 @@ public class ProductsController {
 
     ProductsController(ProductsService productsService) {
         this.productsService = productsService;
+    }
+
+    //Devolver todos los pedidos por producto
+    @GetMapping()
+    public List<ProductDTO> GetMovies(){
+        return productsService.getAll();
     }
 }
