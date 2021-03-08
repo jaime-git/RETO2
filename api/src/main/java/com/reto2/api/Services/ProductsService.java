@@ -17,7 +17,7 @@ public class ProductsService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public List<ProductDTO> EntitiesToDTO(Collection<ProductEntity> list){
+    public List<ProductDTO> EntitiesProduct(Collection<ProductEntity> list){
         return list.stream()
         .map(x -> modelMapper.map(x, ProductDTO.class))
         .collect(Collectors.toList());
@@ -25,7 +25,7 @@ public class ProductsService {
 
     //MOSTRAR TODOS LOS PRODUCTOS
     public List<ProductDTO> getAll(){
-        return EntitiesToDTO(productsRepository.findAll());
+        return EntitiesProduct(productsRepository.findAll());
     }
     
 }

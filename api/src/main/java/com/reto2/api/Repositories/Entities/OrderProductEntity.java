@@ -11,30 +11,30 @@ import javax.persistence.Table;
 public class OrderProductEntity {
 
     private @Id @GeneratedValue(strategy= GenerationType.IDENTITY) Long id;
-    private int cuantity;
+    private int quantity;
 
-    public OrderEntity orderId;
-    public ProductEntity productId;
+    private Long idOrder;
+    private Long idProduct;
 
     public OrderProductEntity(){
     }
 
-    public OrderProductEntity(ProductEntity _productId, OrderEntity _orderId, int _cuantity){
-        this.orderId = _orderId;
-        this.productId = _productId;
-        this.cuantity = _cuantity;
+    public OrderProductEntity(Long _idOrder, Long _idProduct, int _quantity){
+        this.idOrder = _idOrder;
+        this.idProduct = _idProduct;
+        this.quantity = _quantity;
     }
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
-    public int getCuantity() { return cuantity; }
-    public void setCuantity(int cuantity) { this.cuantity = cuantity; }
+    public int getQuantity() { return quantity; }
+    public void setQuantity(int quantity) { this.quantity = quantity; }
 
-    public OrderEntity getOrderId() { return orderId; }
-    public void setOrderId(OrderEntity orderId) { this.orderId = orderId; }
+    public Long getIdOrder() { return idOrder; }
+    public void setIdOrder(Long idOrder) { this.idOrder = idOrder; }
 
-    public ProductEntity getProductId() { return productId; }
-    public void setProductId(ProductEntity productId) { this.productId = productId; }
+    public Long getIdProduct() { return idProduct; }
+    public void setIdProduct(Long idProduct) { this.idProduct = idProduct; }
  
 }

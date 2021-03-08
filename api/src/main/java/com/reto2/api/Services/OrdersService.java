@@ -17,14 +17,14 @@ public class OrdersService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public List<OrderDTO> EntitiesToDTO(Collection<OrderEntity> list){
+    public List<OrderDTO> EntitiesOrder(Collection<OrderEntity> list){
         return list.stream()
         .map(x -> modelMapper.map(x, OrderDTO.class))
         .collect(Collectors.toList());
     }
     //MOSTRAR TODOS LOS PEDIDOS
     public List<OrderDTO> getAll(){
-            return EntitiesToDTO(ordersRepository.findAll());
+            return EntitiesOrder(ordersRepository.findAll());
     }    
     
 }

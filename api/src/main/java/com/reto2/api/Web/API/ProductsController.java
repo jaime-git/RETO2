@@ -19,7 +19,7 @@ public class ProductsController {
         this.productsService = productsService;
     }
 
-    //Devolver todos los pedidos por producto
+    //Devolver todos los productos
     @GetMapping()
     public List<ProductDTO> GetMovies(){
         return productsService.getAll();
