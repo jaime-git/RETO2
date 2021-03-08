@@ -25,12 +25,12 @@ public class OrderProductsController {
     }    
 
     @GetMapping()
-    public List<OrderProductDTO> GetMovies(){
+    public List<OrderProductDTO> GetOP(){
         return orderProductsService.getAll();
     }
 
     @GetMapping("/{id}")
-    public List<OrderProductDTO> Get(@PathVariable("id") Long id){
+    public List<OrderProductDTO> GetById(@PathVariable("id") Long id){
         return orderProductsService.findProductsByOrder(id);
     }
 

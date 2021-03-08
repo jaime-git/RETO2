@@ -21,7 +21,7 @@ public class ProductsController {
 
     //Devolver todos los productos
     @GetMapping()
-    public List<ProductDTO> GetMovies(){
+    public List<ProductDTO> GetProducts(){
         return productsService.getAll();
     }
 }

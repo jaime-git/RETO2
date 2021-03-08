@@ -21,7 +21,7 @@ public class OrdersController {
 
     //Devolver todos los pedidos
     @GetMapping()
-    public List<OrderDTO> GetMovies(){
+    public List<OrderDTO> GetOrders(){
         return ordersService.getAll();
     }
 
