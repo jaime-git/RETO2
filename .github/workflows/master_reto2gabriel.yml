@@ -21,7 +21,7 @@ jobs:
         java-version: '11'
 
     - name: Build with Maven
-      run: mvn clean install
+      run: mvn -f ./api/pom.xml clean install
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
@@ -29,4 +29,4 @@ jobs:
         app-name: 'reto2gabriel'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_da8e4a845ebe428d82c3827c2dae5939 }}
-        package: '${{ github.workspace }}/target/*.jar'
+        package: '${{ github.workspace }}/api/target/*.jar'
