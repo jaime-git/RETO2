@@ -16,7 +16,6 @@ public class InitDB {
     @Bean
     CommandLineRunner initDatabase(ProductsRepository Prepository, OrdersRepository Orepository, OrderProductsRepository OPrepository){
         return args -> {
-            /* Prepository.deleteAll(); */
             Prepository.save(new ProductEntity("Pantalon Nike", 24.00,"https://www.zalando.es/nike-performance-dry-pant-pantalones-deportivos-n1243e0ja-k11.html"));
             Prepository.save(new ProductEntity("Chaqueta Nike", 49.95,"https://www.zalando.es/nike-sportswear-windrunner-chaqueta-de-entrenamiento-game-royal-ni124k00f-k11.html"));
             Prepository.save(new ProductEntity("Zapatillas Nike", 71.95,"https://www.zalando.es/nike-sportswear-air-max-270-zapatillas-ni114d07i-q12.html"));
