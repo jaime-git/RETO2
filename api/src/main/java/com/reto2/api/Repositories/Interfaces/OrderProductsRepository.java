@@ -10,6 +10,6 @@ import org.springframework.data.repository.query.Param;
 
 public interface OrderProductsRepository
     extends JpaRepository<OrderProductEntity, Long>{
-        @Query(value = "SELECT p FROM Products p INNER JOIN OrderProducts op ON op.idProduct = p.id WHERE op.idOrder = :id")
+        @Query(value = "SELECT op FROM OrderProducts op INNER JOIN Orders o ON op.idOrder = o.id WHERE op.idOrder = :id")
         Collection<OrderProductEntity> findByOrderProducts(@Param("id") Long id); 
 }
